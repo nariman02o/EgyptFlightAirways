@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    width: 400px;
+    margin:
+  }
+  header {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .social-media a {
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .login button {
+    background-color: #564caf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .Registration button {
+    background-color: #564caf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .login button:hover {
+    background-color: #45a049;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+  }
+  
+  .footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p, .footer-section ul {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .social-media-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .social-media-links li {
+    margin-right: 10px;
+  }
+  
+  .social-media-links a img {
+    width: 20px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+  }
+  #company-name {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333333;
+   }
+   .container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  label, input, button {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+  }
+  
+  .error {
+    color: red;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 10px; /* Add desired padding value */
+  }
