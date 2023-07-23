@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="airway_styles.css">
+  <script src="login_js.js"></script>
+</head>
+<body>
+    <h1 id="company-name">Egypt Flight Airways</h1>
+    <header>
+        <div class="social-media">
+          <a href="#"><img src="facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="twitter.png" alt="Twitter"></a>
+          
+          <a href="#"><img src=" "alt="Instagram"></a>
+        </div>
+        <div class="login">
+          <button>Login</button>
+        </div>
+        <div class="Registration">
+            <button>Registration</button>
+          </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Book</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Upcoming Flights</a></li>
+          </ul>
+        </nav>
+      </header>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <h1>Registration Form</h1>
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" required>
+
+    <label for="nationalID">National ID</label>
+    <input type="file" id="nationalID" accept=".jpg, .jpeg, .png" required>
+
+    <label for="profilePicture">Profile Picture</label>
+    <input type="file" id="profilePicture" accept=".jpg, .jpeg, .png" required>
+
+    <label for="familyID">Family Members' IDs / Birth Certificates</label>
+    <input type="file" id="familyID" accept=".jpg, .jpeg, .png" multiple>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" required>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" required>
+
+    <button type="submit">Register</button>
+  </form>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Join us today and embark on unforgettable travel experiences with confidence. Begin your journey by browsing our user-friendly website and discover a world of possibilities waiting to be explored..</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Email: contactus@egyptflightairways.com</li>
+          <li>Phone: +1 123 456 7890</li>
+          <li>Address: imaginary street, Cairo, Egypt</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul class="social-media-links">
+          <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+          <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+          <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Egypt Flight Airways. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
