@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="airway_styles.css">
+</head>
+<body>
+    <h1 id="company-name">Egypt Flight Airways</h1>
+    <header>
+        <div class="social-media">
+          <a href="#"><img src="facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="twitter.png" alt="Twitter"></a>
+          
+          <a href="#"><img src=" "alt="Instagram"></a>
+        </div>
+        <div class="login">
+          <button>Login</button>
+        </div>
+        <div class="Registration">
+            <button>Registration</button>
+          </div>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Book</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Upcoming Flights</a></li>
+          </ul>
+        </nav>
+      </header>
+  <h1>Welcome to our Travel Booking Portal</h1>
+  <div id="options">
+    <h2>Select your travel preferences:</h2>
+    <label><input type="radio" name="travelType" value="returnLessThan7">Return in less than 7 days</label><br>
+    <label><input type="radio" name="travelType" value="returnAfter7">Return after 7 days</label><br>
+    <label><input type="radio" name="travelType" value="transitFlight">Transit flight</label><br>
+    <label><input type="radio" name="travelType" value="directFlight">Direct flight</label><br>
+    <label><input type="radio" name="travelType" value="multipleDestinations">Multiple destinations</label><br>
+    <label><input type="radio" name="travelType" value="customPlan">Custom Plan</label>
+    <br><br>
+    <button onclick="showAvailableTrips()">Show Available Trips</button>
+    <button onclick="goToMainMenu()">Return to Main Menu</button>
+  </div>
+
+  <div id="trips" style="display: none;">
+    <h2>Available Trips:</h2>
+    <ul id="tripList"></ul>
+    <button onclick="addTrip()">Add Trip</button>
+    <button onclick="viewCart()">View Cart</button>
+  </div>
+
+  <div id="cart" style="display: none;">
+    <h2>Your Cart:</h2>
+    <ul id="cartList"></ul>
+    <button onclick="removeItem()">Remove Item</button>
+    <button onclick="changeQuantity()">Change Quantity</button>
+    <button onclick="continueAddingTrips()">Continue Adding Trips</button>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Join us today and embark on unforgettable travel experiences with confidence. Begin your journey by browsing our user-friendly website and discover a world of possibilities waiting to be explored..</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Email: contactus@egyptflightairways.com</li>
+          <li>Phone: +1 123 456 7890</li>
+          <li>Address: imaginary street, Cairo, Egypt</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul class="social-media-links">
+          <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+          <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+          <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Egypt Flight Airways. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="airway_scripts.js"></script>
+
+</body>
+</html>
