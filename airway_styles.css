@@ -11,7 +11,7 @@ body {
   
   form {
     width: 400px;
-    margin:
+    margin:20px;
   }
   header {
     background-color: #333;
@@ -55,17 +55,17 @@ body {
   }
   
   nav ul li {
-    margin-right
+    margin-right: 20px; /* 10px with your desired margin value */
   }
   footer {
     background-color: #333;
-    color: #fff;
+    color: #5a40f0;
     padding: 20px;
   }
   
   .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between= 10;
   }
   
   .footer-section {
@@ -104,7 +104,7 @@ body {
   #company-name {
     font-family: Arial, sans-serif;
     font-size: 24px;
-    color: #333333;
+    color: #0b96e6;
    }
    .container {
     width: 300px;
@@ -131,5 +131,65 @@ body {
   }
   nav ul li {
     display: inline;
-    margin-right: 10px; /* Add desired padding value */
+    margin-right: 20px; /* desired padding value */
   }
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #options {
+    margin-bottom: 20px;
+  }
+  
+  #trips {
+    margin-top: 20px;
+  }
+  
+  #cart {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  
+  
+  
+  form {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], input[type="password"] {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 12px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #search {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #results, #card, #order {
+    border: 1px solid #7a1818;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
