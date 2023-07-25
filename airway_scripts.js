@@ -184,3 +184,60 @@ document.querySelector(".login button").addEventListener("click", function() {
     });
     function redirectToHome(page) {
       window.location.href = page;}
+
+      // Function to handle form submission
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  // Get the input values
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Check if login is successful
+  if (username === "admin" && password === "password") {
+    alert("Login successful!");
+    showSearch();
+  } else {
+    alert("Invalid username or password. Please try again.");
+  }
+});
+
+// Function to show the search section
+function showSearch() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("search").style.display = "block";
+}
+
+// Function to handle search button click
+document.getElementById("searchBtn").addEventListener("click", function() {
+  var itemName = document.getElementById("itemName").value;
+  var flight = document.getElementById("flight").value;
+
+  // Perform search logic and display results
+  // ...
+
+  // Show the card section
+  showCard();
+});
+
+// Function to show the card section
+function showCard() {
+  document.getElementById("search").style.display = "none";
+  document.getElementById("card").style.display = "block";
+}
+
+// Function to handle order submission
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form from submitting
+
+  // Display warning message before submitting the order
+  var confirmation = confirm("Please review the order with the travelers before submitting. Are you sure you want to proceed?");
+
+  if (confirmation) {
+    alert("Order submitted successfully!");
+    // Submit the order
+    // ...
+  } else {
+    alert("Order submission cancelled.");
+  }
+});
