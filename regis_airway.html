@@ -1,66 +1,129 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
   <title>Registration Form</title>
   <link rel="stylesheet" type="text/css" href="airway_styles.css">
   <script src="airway_scripts.js"></script>
 </head>
-<body>
-    <h1 id="company-name">Egypt Flight Airways</h1>
-    <header>
-        <div class="social-media">
-          <a href="#"><img src="facebook.png" alt="Facebook"></a>
-          <a href="#"><img src="twitter.png" alt="Twitter"></a>
-          
-          <a href="#"><img src=" "alt="Instagram"></a>
-        </div>
-        <div class="login"
-          <button>  Login</button>
-        </div>
-        <div class="Registration">
-            <button>Registration</button>
-          </div>
-        <nav>
-          <ul>
-            <li><a href="home_page.html">Home</li>
-            <li><a href="orders_page.html">Book</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Upcoming Flights</a></li>
+<header>
+  <img src="C:\Users\omarn\Downloads\egypt-flight-airways-low-resolution-logo-color-on-transparent-background.png" width = 150`px alt="Your Company Logo">
+  <h1 id = '#company-name'> Egypt Flights Airway</h1>  
+  <nav>
+        <ul>
+            <li><a href="home_page.html">Home</a></li>
+            <li><a href="orders_page.html">Book a Flight</a></li>
+            <li><a href="upcoming_flights.html">Upcoming flights</a></li>
+            <li><a href="login_page_airway.html">Login</a></li>
+            <li><a href="regis_airway.html">Register</a></li>
+            <li><a href="contact_us_page.html">contact_us_page</a></li>
           </ul>
         </nav>
+        <div class="social-media">
+          <a href="https://www.facebook.com/"><img src="C:\Users\omarn\Downloads\58e91965eb97430e819064f5.png" width=50px alt="Facebook"  ></a>
+          <a href="http://www.twitter.com/"><img src="C:\Users\omarn\Downloads\580b57fcd9996e24bc43c53e.png" width=50px alt="Twitter"></a>
+          <a href="https://www.instagram.com/"><img src="C:\Users\omarn\Downloads\580b57fcd9996e24bc43c521.png" width =50px alt="Instagram"></a>
+          </div>
       </header>
+      <body>
+        <div class="box">
   <form id="registrationForm" onsubmit="return validateForm()">
     <h1>Registration Form</h1>
-    <label for="fullName">Full Name</label>
-    <input type="text" id="fullName" required>
+    <  <label>First Name</label>
+    <input type="text" placeholder="Enter your name" required>
 
-    <label for="nationalID">National ID</label>
-    <input type="file" id="nationalID" accept=".jpg, .jpeg, .png" required>
 
-    <label for="profilePicture">Profile Picture</label>
-    <input type="file" id="profilePicture" accept=".jpg, .jpeg, .png" required>
+    <label>Middle Name</label>
+    <input type="text" placeholder="Enter your name" required>
 
-    <label for="familyID">Family Members' IDs / Birth Certificates</label>
-    <input type="file" id="familyID" accept=".jpg, .jpeg, .png" multiple>
+    <label>Last Name</label>
+    <input type="text" placeholder="Enter your name" required>
 
-    <label for="password">Password</label>
-    <input type="password" id="password" required>
+    <label>ID Number</label>
+    <input type="number" placeholder="Enter ID number" required>
 
-    <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword" required>
+    <label>Date of Birth</label>
+    <input type="date" placeholder="Enter birth date" required>
 
-    <button type="submit">Register</button>
+    <label>Gender</label>
+    <select required>
+        <option>Select gender</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+
+    <label>Nationality</label>
+    <input type="text" placeholder="Enter nationality" required>
+
+    <label>Mobile Number</label>
+    <input type="number" placeholder="Enter mobile number" required>
+
+    <label>Email</label>
+    <input type="text" placeholder="Enter your email" required>
+
+    <label>Occupation</label>
+    <input type="text" placeholder="Enter your occupation" required><br>
+
+        <label>country </label>
+        <input type="text" placeholder="Enter your country" required>
+
+        <label>city</label>
+        <input type="text" placeholder="Enter your city" required>
+
+
+    
+        <label>Home Address</label>
+        <input type="text" placeholder="Enter your address" required>
+   
+
+
+  
+
+        <label for="profilePicture">Profile Picture</label>
+        <input type="file" id="profilePicture" accept=".jpg, .jpeg, .png" required>
+
+
+        <label for="familyID">Family Members' IDs / Birth Certificates</label>
+        <input type="file" id="familyID" accept=".jpg, .jpeg, .png" multiple>
+
+
+        <label for="password">password</b></label>
+        <input name="password" required="required" type="password"
+            placeholder="Enter your password" id="password" oninput="check()" />
+
+
+            <label for="password_confirm">Confirm Password:</label>
+        <input name="password_confirm" required="required" type="password"
+            placeholder="Confirm password" id="password_confirm" oninput="check()" />
+
+
+
+    <div class="buttons">
+       
+        <div class="backBtn">
+            <span class="btnText">Back</span>
+        </div>
+        
+        
+        <form action="signin.html">
+            <button class="sumbit">
+
+                <span class="btnText">Submit</span>
+            </button>
+        </form>
   </form>
+</div>  
   <footer>
     <div class="footer-content">
       <div class="footer-section">
         <h3>About Us</h3>
-        <p>Join us today and embark on unforgettable travel experiences with confidence. Begin your journey by browsing our user-friendly website and discover a world of possibilities waiting to be explored..</p>
+        <p><l>Join us today and embark on unforgettable travel experiences with confidence. Begin your journey by browsing our user-friendly website and discover a world of possibilities waiting to be explored..</l></p>
       </div>
       <div class="footer-section">
         <h3>Contact Us</h3>
         <ul>
-          <li>Email: contactus@egyptflightairways.com</li>
+          <li><a="Email: contactus@egyptflightairways.com></a></li>
           <li>Phone: +1 123 456 7890</li>
           <li>Address: imaginary street, Cairo, Egypt</li>
         </ul>
