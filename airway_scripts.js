@@ -3,32 +3,79 @@ let cart = [];
 function showAvailableTrips() {
     document.getElementById("trips").style.display = "block";
     const tripList = document.getElementById("tripList");
-    tripList.innerHTML = "";
+    tripList.innerHTML = "tripList";
 
     const selectedOption = document.querySelector('input[name="travelType"]:checked').value;
 
-    // based on the selectedOption, you can fetch and display the available trips for the traveler
+    // based on the selectedOption,fetch and display the available trips for the traveler
 
 
     if (selectedOption === "returnLessThan7") {
-        tripList.innerHTML = "<li>Trip A</li><li>Trip B</li>";
+      tripList.innerHTML = `
+        <li> ><input type="radio" name="option" value="cairo">Cairo </li>
+        <li> ><input type="radio" name="option" value="giza">Giza </li>
+        <li> ><input type="radio" name="option" value="Alexandria">Alexandria </li>   `;
+    } else if (selectedOption === "return7to14") {
+      tripList.innerHTML = `
+      <li> ><input type="radio" name="option" value="Aswan">Aswan </li>  
+      <li> ><input type="radio" name="option" value="Luxor">Luxor </li>  
+      <li> ><input type="radio" name="option" value="Hurghada">Hurghada </li>   `;
+    } else if (selectedOption === "returnMoreThan14") {
+      tripList.innerHTML = `
+      <li> ><input type="radio" name="option" value="Marsa Alam">Marsa Alam </li>  
+      <li> ><input type="radio" name="option" value="El Arish">El Arish </li>  
+      <li> ><input type="radio" name="option" value="El Gouna">El Gouna </li>  `;
     } else if (selectedOption === "returnAfter7") {
-        tripList.innerHTML = "<li>Trip C</li><li>Trip D</li>";
+      tripList.innerHTML = `
+      <li> ><input type="radio" name="option" value="Siwa Oasis ">Siwa Oasis</li>
+      <li> ><input type="radio" name="option" value="Ismailia">Ismailia </li>
+      `;
     } else if (selectedOption === "transitFlight") {
-        tripList.innerHTML = "<li>Trip E</li><li>Trip F</li>";
+      tripList.innerHTML = `
+      <li> ><input type="radio" name="option" value="El Alamain">El Alamain </li>
+      <li> ><input type="radio" name="option" value="Port Said">Port Said </li>
+      <li> ><input type="radio" name="option" value="El Gouna">El Gouna </li>
+      `;
     } else if (selectedOption === "directFlight") {
-        tripList.innerHTML = "<li>Trip G</li><li>Trip H</li>";
+      tripList.innerHTML = `
+      <li> ><input type="radio" name="option" value="Assiut">Assiut </li>
+      `;
     } else if (selectedOption === "multipleDestinations") {
-        tripList.innerHTML = "<li>Trip I</li><li>Trip J</li>";
+      tripList.innerHTML = `
+      <li> ><input type="radio" name="option" value="El Alamain">El Alamain </li>
+      <li> ><input type="radio" name="option" value="El Gouna">El Gouna </li>
+      `;
     } else if (selectedOption === "customPlan") {
-        tripList.innerHTML = "<li>id = governoratesList</li>"
-    }
+      tripList.innerHTML = `
+        <li id="tripList"></li>`
 }
+    }
 
 function addTrip() {
-    const tripList = document.getElementById("tripList");
-    const selectedTrip = tripList.querySelector('li:checked').textContent;
-    cart.push(selectedTrip);
+
+  const selectedTrips = [];
+  const selectedOption = document.querySelector('input[name="travelType"]:checked').value;
+
+  if (selectedOption === "returnLessThan7" || selectedOption === "return7to14" || selectedOption === "returnMoreThan14") {
+    const selectedTrip = document.querySelector('input[name="selectedTrip"]:checked');
+    if (selectedTrip) {
+      selectedTrips.push(selectedTrip.value);
+    }
+  } else {
+    const selectedTripCheckboxes = document.querySelectorAll('input[name="selectedTrip"]:checked');
+    selectedTripCheckboxes.forEach((checkbox) => {
+      selectedTrips.push(checkbox.value);
+    });
+  }
+
+  // Add the selected trips to the cart or perform any other desired action
+  cart = cart.concat(selectedTrips);
+
+  console.log("Selected trips:", selectedTrips);
+  console.log("Cart:", cart);
+    //const tripList = document.getElementById("tripList");
+    //const selectedTrip = tripList.querySelector('li:checked').textContent;
+    //cart.push(selectedTrip);
 
     alert("Trip added to cart!");
 }
@@ -39,58 +86,64 @@ function goToMainMenu() {
 }
 
 function viewCart() {
-    document.getElementById("trips").style.display = "none";
-    document.getElementById("cart").style.display = "block";
-    const cartList = document.getElementById("cartList");
-    cartList.innerHTML = "";
+  document.getElementById("trips").style.display = "none";
+  document.getElementById("cart").style.display = "block";
+  const cartList = document.getElementById("cartList");
+  cartList.innerHTML = "";
 
-    for (let i = 0; i < cart.length; i++) {
-        const listItem = document.createElement("li");
-        listItem.textContent = cart[i];
-        cartList.appendChild(listItem);
+  for (let i = 0; i < cart.length; i++) {
+    const listItem = document.createElement("li");
+    listItem.textContent = cart[i];
+    cartList.appendChild(listItem);
     }
 }
 
 function removeItem() {
-    const cartList = document.getElementById("cartList");
-    const selectedTrip = cartList.querySelector('li:checked').textContent;
-}
-const governorates = [
-    "Alexandria",
-    "Aswan",
-    "Asyut",
-    "Beheira",
-    "Beni Suef",
-    "Cairo",
-    "Dakahlia",
-    "Damietta",
-    "Faiyum",
-    "Gharbia",
-    "Giza",
-    "Ismailia",
-    "Kafr El Sheikh",
-    "Luxor",
-    "Matrouh",
-    "Minya",
-    "Monufia",
-    "New Valley",
-    "North Sinai",
-    "Port Said",
-    "Qalyubia",
-    "Qena",
-    "Red Sea",
-    "Sharqia",
-    "Sohag",
-    "South Sinai",
-    "Suez"
-];
+  selectedTrips = [];
+  const selectedOption = document.querySelector('input[name="travelType"]:checked').value;
 
-const governoratesList = document.getElementById("governoratesList");
-governorates.forEach(function (governorate) {
-    const listItem = document.createElement("li");
-    listItem.textContent = governorate;
-    governoratesList.appendChild(listItem);
-});
+  if (selectedOption === "returnLessThan7" || selectedOption === "return7to14" || selectedOption === "returnMoreThan14") {
+    const selectedTrip = document.querySelector('input[name="selectedTrip"]:checked');
+    if (selectedTrip) {
+      const removedElement = selectedTrip.parentNode.textContent.trim();
+      selectedTrip.parentNode.remove();
+      console.log(`Removed trip: ${removedElement}`);
+    }
+  } else {
+    const selectedTripCheckboxes = document.querySelectorAll('input[name="selectedTrip"]:checked');
+    if (selectedTripCheckboxes.length > 0) {
+      selectedTripCheckboxes.forEach(function (selectedTripCheckbox) {
+        const removedElement = selectedTripCheckbox.parentNode.textContent.trim();
+        selectedTripCheckbox.parentNode.remove();
+        selectedTrips.push(removedElement);
+      });
+      console.log(`Removed trips: ${selectedTrips.join(", ")}`);
+    }
+  }  selectedTrips = [];
+  selectedOption = document.querySelector('input[name="travelType"]:checked').value;
+
+  if (selectedOption === "returnLessThan7" || selectedOption === "return7to14" || selectedOption === "returnMoreThan14") {
+    const selectedTrip = document.querySelector('input[name="selectedTrip"]:checked');
+    if (selectedTrip) {
+      const removedElement = selectedTrip.parentNode.textContent.trim();
+      selectedTrip.parentNode.remove();
+      console.log(`Removed trip: ${removedElement}`);
+    }
+  } else {
+    const selectedTripCheckboxes = document.querySelectorAll('input[name="selectedTrip"]:checked');
+    if (selectedTripCheckboxes.length > 0) {
+      selectedTripCheckboxes.forEach(function (selectedTripCheckbox) {
+        const removedElement = selectedTripCheckbox.parentNode.textContent.trim();
+        selectedTripCheckbox.parentNode.remove();
+        selectedTrips.push(removedElement);
+      });
+      console.log(`Removed trips: ${selectedTrips.join(", ")}`);
+    }
+  }
+  //  const cartList = document.getElementById("cartList");
+   // const selectedTrip = cartList.querySelector('li:checked').textContent;
+}
+
 // Login button event listener
 document.querySelector(".login button").addEventListener("click", function() {
     // Add your login logic here
@@ -182,11 +235,36 @@ document.querySelector(".login button").addEventListener("click", function() {
       cartList.appendChild(listItem);
       newItemInput.value = "";
     });
-    function redirectToHome(page) {
-      window.location.href = page;}
+          // a function to give access to the quality control department
+      function checkAccess(role) {
+        if (role === "quality control") {
+          // Redirect to quality-control-only page
+          window.location.href = "customer_service_page.html";
+        } else {
+          // Redirect to regular user page
+          window.location.href = "orders_page.html";
+        }
+      }
+      
+      // Function to handle login form submission
+      function handleLogin() {
+        const username = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+      
+        // Perform authentication logic here and set user role
+        // For simplicity, we'll assume correct credentials for now
+        if (email === "quality control" && password === "password") {
+          traveler.role = "quality control";
+        } else {
+          traveler.role = "traveler";
+        }
+      
+        // Call checkAccess function with user role
+        checkAccess(traveler.role);
+      }
 
       // Function to handle form submission
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent form from submitting
 
   // Get the input values
